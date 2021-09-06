@@ -28,9 +28,15 @@
         },
         {
             "ruta" : "slider",
-            "icon" : "list",
+            "icon" : "slider",
             "texto": "Sliders"
+        },
+        {
+            "ruta" : "list",
+            "icon" : "list",
+            "texto": "Lista y Scroll"
         }
+
 
 
     ]
