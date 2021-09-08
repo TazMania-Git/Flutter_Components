@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 class ListPage extends StatefulWidget {
@@ -12,7 +14,7 @@ class _ListPageState extends State<ListPage> {
 
   List<int> _listaNumeros = [];
   int _ultimoItem = 0;
-
+  bool _isLoading = false;
   @override
   void initState() {
     super.initState();
@@ -20,18 +22,32 @@ class _ListPageState extends State<ListPage> {
     _agregarDiez();
     _scrollController.addListener(() {
       if (_scrollController.position.pixels ==
-          _scrollController.position.maxScrollExtent) _agregarDiez();
+          _scrollController.position.maxScrollExtent)
+        // _agregarDiez();
+        fetchData();
     });
+  }
+
+  @override
+  //LO QUE HACE DISPOSE ES BORRAR EL LISTENER PARA QUE CUANDO ENTREMOS DE NUEVO EN LA PAGE NO SE CARGUE UNO NUEVO
+  //Y NO SE VAYAN ACUMULANDO LOS LISTENERS
+  void dispose() {
+    super.dispose();
+    _scrollController.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Listas"),
-      ),
-      body: _crearListas(),
-    );
+        appBar: AppBar(
+          title: Text("Listas"),
+        ),
+        body: Stack(
+          children: [
+            _crearListas(),
+            _crearLoading(),
+          ],
+        ));
   }
 
   Widget _crearListas() {
@@ -54,5 +70,34 @@ class _ListPageState extends State<ListPage> {
       _listaNumeros.add(_ultimoItem);
     }
     setState(() {});
+  }
+
+  Future fetchData() async {
+    _isLoading = true;
+    setState(() {});
+    final duration = new Duration(seconds: 2);
+    new Timer(duration, respuestaHttp);
+  }
+
+  void respuestaHttp() {
+    _isLoading = false;
+    _agregarDiez();
+  }
+
+  Widget _crearLoading() {
+    if (_isLoading) {
+      return Column(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [CircularProgressIndicator()],
+          ),
+        ],
+      );
+    } else {
+      return Container();
+    }
   }
 }
