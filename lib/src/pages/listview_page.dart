@@ -51,17 +51,31 @@ class _ListPageState extends State<ListPage> {
   }
 
   Widget _crearListas() {
-    return ListView.builder(
-      controller: _scrollController,
-      itemCount: _listaNumeros.length,
-      itemBuilder: (BuildContext context, int index) {
-        final imagen = _listaNumeros[index];
-        return FadeInImage(
-            placeholder: AssetImage('assets/jar-loading.gif'),
-            image:
-                NetworkImage("https://picsum.photos/500/300?random=$imagen"));
-      },
+    return RefreshIndicator(
+      onRefresh: obtenerNewData,
+      child: ListView.builder(
+        controller: _scrollController,
+        itemCount: _listaNumeros.length,
+        itemBuilder: (BuildContext context, int index) {
+          final imagen = _listaNumeros[index];
+          return FadeInImage(
+              placeholder: AssetImage('assets/jar-loading.gif'),
+              image:
+                  NetworkImage("https://picsum.photos/500/300?random=$imagen"));
+        },
+      ),
     );
+  }
+
+  Future<Null> obtenerNewData() async {
+    final duracion = new Duration(seconds: 2);
+    new Timer(duracion, () {
+      _listaNumeros.clear();
+      _ultimoItem++;
+      _agregarDiez();
+    });
+
+    return Future.delayed(duracion);
   }
 
   void _agregarDiez() {
@@ -81,6 +95,13 @@ class _ListPageState extends State<ListPage> {
 
   void respuestaHttp() {
     _isLoading = false;
+
+    _scrollController.animateTo(
+      _scrollController.position.pixels + 100,
+      curve: Curves.fastOutSlowIn,
+      duration: Duration(milliseconds: 250),
+    );
+
     _agregarDiez();
   }
 
@@ -94,6 +115,9 @@ class _ListPageState extends State<ListPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [CircularProgressIndicator()],
           ),
+          SizedBox(
+            height: 15,
+          )
         ],
       );
     } else {

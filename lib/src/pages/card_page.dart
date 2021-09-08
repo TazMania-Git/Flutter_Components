@@ -62,7 +62,7 @@ class CardPage extends StatelessWidget {
           FadeInImage(
             placeholder: AssetImage('assets/jar-loading.gif'),
             image: NetworkImage(
-                'https://img.redbull.com/images/c_crop,w_1620,h_1080,x_143,y_0,f_auto,q_auto/c_scale,w_1500/redbullcom/2018/04/23/e4a3d8a5-2c44-480a-b300-1b2b03e205a5/avengers-infinity-war-poster'),
+                'https://p4.wallpaperbetter.com/wallpaper/624/458/452/interstellar-wallpaper-preview.jpg'),
             fadeInDuration: Duration(milliseconds: 200),
             height: 300,
             fit: BoxFit.cover,

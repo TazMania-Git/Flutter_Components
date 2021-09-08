@@ -12,8 +12,8 @@ class _InputPageState extends State<InputPage> {
   String _email = '';
   String _fecha = '';
   final TextEditingController _inputFieldController = new TextEditingController();
-  final List<String> _poderes = ['Fuerza','Velocidad','Super Aliento','Volar'];
-  String _opcionSeleccionada = 'Volar';
+  final List<String> _poderes = ['Soltero','Casado','Concubinato','Viudo','Separado'];
+  String _opcionSeleccionada = 'Soltero';
 
   @override
   Widget build(BuildContext context) {
