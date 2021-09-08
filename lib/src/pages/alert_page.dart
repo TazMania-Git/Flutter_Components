@@ -32,23 +32,31 @@ class AlertPage extends StatelessWidget {
       barrierDismissible: true,
       builder: (context) {
         return AlertDialog(
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-            title: Text("Este es el título"),
-            content: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                Text("El contenido"),
-                FlutterLogo(size: 100,)
-              ],
-            ),
-            actions: <Widget>[
-              TextButton(onPressed: (){Navigator.of(context).pop();}, child: Text("Cancelar")),
-              TextButton(onPressed: (){Navigator.of(context).pop();}, child: Text("Ok"))
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+          title: Text("Este es el título"),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              Text("El contenido del cartel"),
+              FlutterLogo(
+                size: 100,
+              )
             ],
-
-            );
-            
-
+          ),
+          actions: <Widget>[
+            TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: Text("Cancelar")),
+            TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: Text("Ok"))
+          ],
+        );
       },
     );
   }
