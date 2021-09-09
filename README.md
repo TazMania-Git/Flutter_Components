@@ -1,16 +1,46 @@
-# componentes
+# App Components Flutter
+Es una simple aplicación en donde puse en práctica las distintas herramientas de Flutter. En ella se pueden ver la generacion de Alertas, Animaciones, Avatars, ejemplos de Cards, Inputs, Listas, Slider y Check Boxes.
 
-A new Flutter project.
+## Funcionamiento 🚀
+La aplicación es muy intuitiva ya que utiliza las funcionalidades nativas de Android y IOS (por el momento se utilizó un emulador Android) 
 
-## Getting Started
+![](https://github.com/TazMania-Git/AppMLTest/blob/main/src/assets/AppMLTest.gif)
 
-This project is a starting point for a Flutter application.
+## Alertas
 
-A few resources to get you started if this is your first Flutter project:
+![Alt text](https://github.com/TazMania-Git/AppMLTest/blob/main/src/assets/Captura1.PNG?raw=true)![Alt text](https://github.com/TazMania-Git/AppMLTest/blob/main/src/assets/Captura2.PNG?raw=true)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Alt text](https://github.com/TazMania-Git/AppMLTest/blob/main/src/assets/Captura3.PNG?raw=true)![Alt text](https://github.com/TazMania-Git/AppMLTest/blob/main/src/assets/Captura4.PNG?raw=true)
+
+## Avatars
+
+![Alt text](https://github.com/TazMania-Git/AppMLTest/blob/main/src/assets/Captura5.PNG?raw=true)
+
+## Cards - Tarjetas
+
+![Alt text](https://github.com/TazMania-Git/AppMLTest/blob/main/src/assets/Captura6.PNG?raw=true)
+
+## Animated Container
+
+![Alt text](https://github.com/TazMania-Git/AppMLTest/blob/main/src/assets/PDF1.jpg?raw=true)
+
+## Inputs
+
+![Alt text](https://github.com/TazMania-Git/AppMLTest/blob/main/src/assets/PDF1.jpg?raw=true)
+
+## Sliders
+
+![Alt text](https://github.com/TazMania-Git/AppMLTest/blob/main/src/assets/PDF1.jpg?raw=true)
+
+## Lista y Scroll
+
+![Alt text](https://github.com/TazMania-Git/AppMLTest/blob/main/src/assets/PDF1.jpg?raw=true)
+
+## Comentarios
+
+
+
+
+
+
